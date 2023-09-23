@@ -16,11 +16,11 @@ print("Age:", age)
 
 if age < 13 :
     cat = "child"
-else:
-    if 13 < age < 20:
+
+elif 13 < age <= 19:
         cat = "teenager"
-    else:
-        cat = "grown-up"
+elif age >= 20:
+    cat = "grown-up"
 
 print("Category:", cat)
 

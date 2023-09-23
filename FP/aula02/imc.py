@@ -11,13 +11,20 @@ peso = float(input("Peso (kg)? "))
 
 imc = peso / altura**2
 
-print("IMC:", imc, "kg/m2")
+print("IMC: {:.2f}kg/m2".format(imc))
 
 # Determinar a categoria de IMC:
-if imc < 20:
+if imc < 18.5:
     categoria = "Magro"
-else:
+
+elif 18.5 <= imc < 25:
+    categoria = "Magro"
+
+elif 25 <= imc < 30:
+    categoria = "Forte"
+
+elif imc >= 30:
     categoria = "Obeso"
 
-print("Categoria:", categoria)
+print("Categoria:",categoria)
 
