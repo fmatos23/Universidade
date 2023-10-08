@@ -3,22 +3,32 @@
 # It is wrong: 1900 was a common year!
 # (See: https://en.wikipedia.org/wiki/Leap_year)
 def isLeapYear(year):
-    return year%4 == 0
+    return (year % 4 == 0 and year % 100 != 0) or year % 400 == 0
 
 
 # This function has a semantic error: February in a leap year should return 29!
 # Correct it.
 def monthDays(year, month):
-    MONTHDAYS = (0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
-        # This tuple contains the days in each month (on a common year).
-        # For example: MONTHDAYS[3] is the number of days in March.
-    days = MONTHDAYS[month]
+    if isLeapYear(year):
+        MonthDays = (0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+    else:
+        MonthDays = (0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+    days = MonthDays[month]
     return days
 
 
 # This is wrong, too.
 def nextDay(year, month, day):
-    day += 1
+    if day < monthDays(year, month):
+        day += 1
+    else:
+        day = 1
+        if month < 12:
+            month += 1
+        else:
+            month = 1
+            year += 1
+
     return year, month, day
 
 

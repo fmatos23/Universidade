@@ -4,7 +4,7 @@
 # given the height (in meter) and weight (in kg) of a person.
 def bodyMassIndex(height, weight):
     # Complete the function definition...
-    bmi = ...
+    bmi = weight / height**2
     return bmi
 
 
@@ -13,9 +13,17 @@ def bodyMassIndex(height, weight):
 # Category:   Underweight   Normal weight   Overweight    Obesity 
 def bmiCategory(bmi):
     assert bmi>0
+    category = ""
     # Complete the function definition...
-    ...
-
+    if bmi < 18.5:
+        category = "Underweight"
+    elif 18.5 <= bmi < 25:
+        category = "Normal weight"
+    elif 25 <= bmi < 30:
+        category = "Overweight"
+    elif category >= 30:
+        category = "Obesity"
+    return category
 
 # This is the main function
 def main():
@@ -32,8 +40,8 @@ def main():
         exit(1)
 
     # Complete the function calls...
-    imc = bodyMassIndex( ... )
-    cat = bmiCategory(...)
+    imc = bodyMassIndex(altura, peso)
+    cat = bmiCategory(imc)
 
     print("BMI:", imc, "kg/m2")
     print("BMI category:", cat)
