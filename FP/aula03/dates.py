@@ -19,7 +19,7 @@ def monthDays(year, month):
 
 # This is wrong, too.
 def nextDay(year, month, day):
-    if day < monthDays(year, month):
+    if day < monthDays(year,month):
         day += 1
     else:
         day = 1
@@ -27,8 +27,6 @@ def nextDay(year, month, day):
             month += 1
         else:
             month = 1
-            year += 1
-
     return year, month, day
 
 
