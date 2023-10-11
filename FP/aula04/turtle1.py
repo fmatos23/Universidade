@@ -17,7 +17,9 @@ def square(t, side):
 # until the length reaches length=end (exclusive).
 def spiral(t, start, end, incr):
     # Complete the function...
-    ...
+    for n in range(start, end, incr):
+        t.forward(n)
+        t.left(90)
 
 def main():
     print("This program opens a window with a graphical user interface.")
