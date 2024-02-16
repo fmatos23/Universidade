@@ -29,4 +29,3 @@ def getResult(matches):
         result[match] = (golo1, golo2)
     return result
 
-print(getResult([("slb", "scp")]))

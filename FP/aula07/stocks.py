@@ -34,8 +34,11 @@ def loadStockFile(filename):
 
 def totalVolume(lst):
     totVol = {}
-    # Complete ...
-
+    for tup in lst:
+        if tup[NAME] not in totVol:
+            totVol[tup[NAME]] = tup[VOLUME]
+        else:
+            totVol[tup[NAME]] += tup[VOLUME]''
     return totVol
 
 def maxValorization(lst):
